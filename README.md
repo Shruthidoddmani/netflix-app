@@ -12,6 +12,11 @@ Currently, two official plugins are available:
  # Features
  - Login & Signup
     - Sign in / Sign up form
+        - validation
+            -email
+            -password
+            -full name
+
     - redirect to browse page
  - Browse ( after authentication )
     - Header
