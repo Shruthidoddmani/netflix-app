@@ -10,7 +10,7 @@ const Login = () => {
   const fullName = useRef(null);
 
   const onButtonClickHandler = () => {
-    const message = checkValidData(email.current.value, password.current.value)
+    const message = checkValidData(email.current?.value, password?.current?.value, fullName?.current?.value)
     setErrorMsg(message);
   }
   return (
@@ -48,11 +48,13 @@ const Login = () => {
           className="p-4 my-4 w-full bg-gray-700 rounded-md"
         />
 
-          <p className='text-red-500 font-bold'>{errorMsg}</p>
+        <p className='text-red-500 font-bold'>{errorMsg}</p>
         <button
-          className="p-4 my-4 bg-red-700 w-full rounded-lg">
-          {isSignIn ? "Sign In" : "Sign Up"}
+          className="p-4 my-4 bg-red-700 w-full rounded-lg"
           onClick={onButtonClickHandler}
+        >
+          {isSignIn ? "Sign In" : "Sign Up"}
+
         </button>
 
         <p
