@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react';
 import Header from "./Header"
-import { checkValidData } from '../utils/validate';
+import { checkValidData } from '../utils/Validate';
+import { LoginImgUrl } from '../utils/Constants'
 
 const Login = () => {
   const [isSignIn, setIsSignIn] = useState(true);
@@ -18,7 +19,7 @@ const Login = () => {
       <Header />
       <img
         className="absolute"
-        src='https://assets.nflxext.com/ffe/siteui/vlv3/ce449112-3294-449a-b8d3-c4e1fdd7cff5/web/IN-en-20241202-TRIFECTA-perspective_0acfb303-6291-4ad1-806f-dda785f6295a_medium.jpg'
+        src={LoginImgUrl}
         alt='background-img'
       />
 
@@ -61,7 +62,7 @@ const Login = () => {
           className="text-slate-300">
           {isSignIn ? 'New to Netflix? ' : 'Already registered '}
           <span
-            className="hover:underline"
+            className="hover:underline cursor-pointer"
             onClick={() => setIsSignIn(!isSignIn)}
           > {isSignIn ? 'Sign Up Now' : 'Sign In Now'} </span>
         </p>
