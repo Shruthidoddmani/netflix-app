@@ -9,6 +9,19 @@ Currently, two official plugins are available:
 
 
 
+
+- create React App
+- configured Tailwind css
+- create Header
+- Routing of our App
+- Create Login Form
+- create Sign up form
+- Form Validation 
+- useRef Hook
+- FireHBase Setup
+- Deploying our app to production 
+- create SignUp user account using Firebase
+
  # Features
  - Login & Signup
     - Sign in / Sign up form
