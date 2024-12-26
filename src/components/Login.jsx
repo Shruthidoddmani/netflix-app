@@ -1,7 +1,10 @@
 import { useState, useRef } from 'react';
-import Header from "./Header"
+import Header from "./Header";
 import { checkValidData } from '../utils/Validate';
-import { LoginImgUrl } from '../utils/Constants'
+import { LOGIN_IMG_URL } from '../utils/Constants';
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from '../utils/firebase';
+
 
 const Login = () => {
   const [isSignIn, setIsSignIn] = useState(true);
@@ -11,15 +14,44 @@ const Login = () => {
   const fullName = useRef(null);
 
   const onButtonClickHandler = () => {
-    const message = checkValidData(email.current?.value, password?.current?.value, fullName?.current?.value)
+    const message = checkValidData(email.current?.value, password?.current?.value)
     setErrorMsg(message);
+    if (message) return
+    if (!isSignIn) {
+      createUserWithEmailAndPassword(auth, email.current?.value, password?.current?.value)
+        .then((userCredential) => {
+          // Signed up 
+          const user = userCredential.user;
+          console.log(user);
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          setErrorMsg(errorCode + '-' + errorMessage);
+        });
+
+    } else {
+      signInWithEmailAndPassword(auth, email.current?.value, password?.current?.value)
+        .then((userCredential) => {
+          // Signed in 
+          const user = userCredential.user;
+          console.log(user);
+          // ...
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          setErrorMsg(errorCode + '-' + errorMessage);
+        });
+    }
   }
+
   return (
     <div>
       <Header />
       <img
         className="absolute"
-        src={LoginImgUrl}
+        src={LOGIN_IMG_URL}
         alt='background-img'
       />
 
