@@ -3,7 +3,7 @@ import Header from "./Header";
 import { checkValidData } from '../utils/Validate';
 import { LOGIN_IMG_URL } from '../utils/Constants';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from '../utils/firebase';
+import { auth } from '../utils/Firebase';
 
 
 const Login = () => {
@@ -50,7 +50,7 @@ const Login = () => {
     <div>
       <Header />
       <img
-        className="absolute"
+        className="absolute object-fill"
         src={LOGIN_IMG_URL}
         alt='background-img'
       />
