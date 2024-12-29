@@ -20,7 +20,10 @@ Currently, two official plugins are available:
 - useRef Hook
 - FireHBase Setup
 - Deploying our app to production 
-- create SignUp user account using Firebase
+- create SignUp user account using Firebase API
+- Implemented Sign in user using Firebase API
+- Created Redux store using Redux toolkit and created UserSlice
+- 
 
  # Features
  - Login & Signup
