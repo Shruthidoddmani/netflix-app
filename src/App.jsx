@@ -1,31 +1,28 @@
+import {  } from 'react';
 import Login from './components/Login';
 import Browse from './components/Browse'
-import { createBrowserRouter, RouterProvider, useNavigate } from 'react-router-dom';
-import store from './utils/AppStore';
-import { Provider } from 'react-redux';
+import { createBrowserRouter } from 'react-router-dom';
+import { RouterProvider } from 'react-router-dom';
+
+
 
 function App() {
-  const appRouter = createBrowserRouter([
-    {
-      path: '/',
-      element: <Login />,
-    },
-    {
-      path: '/browse',
-      element: <Browse />,
-    }
-  ]);
-
   return (
     <>
-      <Provider store={store}>
-        <RouterProvider router={appRouter} >
-          {/* <Body /> */}
-
-        </RouterProvider>
-      </Provider>
+      <RouterProvider router={appRouter} />
     </>
   )
 }
+
+const appRouter = createBrowserRouter([
+  {
+    path: '/',
+    element: <Login />,
+  },
+  {
+    path: '/browse',
+    element: <Browse />,
+  }
+]);
 
 export default App
