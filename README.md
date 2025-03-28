@@ -24,6 +24,8 @@ Currently, two official plugins are available:
 - Implemented Sign in user using Firebase API
 - Created Redux store using Redux toolkit and created UserSlice
 - added onAuthStateChanged API
+- created redux store
+- Sign in and Sign out integration
 
  # Features
  - Login & Signup
