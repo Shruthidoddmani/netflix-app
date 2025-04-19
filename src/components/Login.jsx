@@ -6,6 +6,7 @@ import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfi
 import { auth } from '../utils/Firebase';
 import { useDispatch } from 'react-redux';
 import { updateUserDetails } from '../utils/UserSlice';
+import { USER_PROFILE_URL } from '../utils/Constants'
 
 
 const Login = () => {
@@ -26,11 +27,10 @@ const Login = () => {
         .then((userCredential) => {
           const user = userCredential.user;
           updateProfile(user, {
-            displayName: fullName.current?.value, photoURL: "https://example.com/jane-q-user/profile.jpg"
+            displayName: fullName.current?.value, photoURL: USER_PROFILE_URL
           }).then(() => { 
             const { uid, email, displayName, photoURL } = auth.currentUser;
             dispatch(updateUserDetails({ uid, email, displayName, photoURL }));
-            // navigate('/browse')
           }).catch(err => {
             console.error('error', err)
           });

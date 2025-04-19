@@ -9,7 +9,6 @@ Currently, two official plugins are available:
 
 
 
-
 - create React App
 - configured Tailwind css
 - create Header
@@ -26,6 +25,10 @@ Currently, two official plugins are available:
 - added onAuthStateChanged API
 - created redux store
 - Sign in and Sign out integration
+- Update Profile
+- BugFix: Sign Up user displayName and Profile picture update
+- BugFix: If the user is not logged in Redirect to Login page and vice versa
+- UnSubscribed to the onAuthStateChanged callback
 
  # Features
  - Login & Signup
@@ -43,7 +46,6 @@ Currently, two official plugins are available:
         - Title & Description
         - Movie Suggestions 
             - Movies Lists * N & vertical scrollable 
-- Netflix GPT
+ - Netflix GPT
     - Search Bar
     - Movie Suggestions
-     
