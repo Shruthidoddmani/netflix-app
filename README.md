@@ -8,7 +8,6 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 
-
 - create React App
 - configured Tailwind css
 - create Header
@@ -29,6 +28,9 @@ Currently, two official plugins are available:
 - BugFix: Sign Up user displayName and Profile picture update
 - BugFix: If the user is not logged in Redirect to Login page and vice versa
 - UnSubscribed to the onAuthStateChanged callback
+- registered TMDB API & create an app & get access token and API key
+- get data from TMDB now playing movies lists API
+-
 
  # Features
  - Login & Signup
