@@ -30,7 +30,14 @@ Currently, two official plugins are available:
 - UnSubscribed to the onAuthStateChanged callback
 - registered TMDB API & create an app & get access token and API key
 - get data from TMDB now playing movies lists API
--
+- created custom hook for to now playingmovies
+- created movie slice 
+- Update store with movies data
+- Palnning for mainCotainer and Secondary Container
+- custum hook for to fetch the trailer video
+- update store with video data
+- embedded the youtube video and make it autoplay and mute 
+- added css to look video as background 
 
  # Features
  - Login & Signup
