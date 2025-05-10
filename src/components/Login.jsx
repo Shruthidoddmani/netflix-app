@@ -1,12 +1,12 @@
 import { useState, useRef } from 'react';
 import Header from "./Header";
-import { checkValidData } from '../utils/Validate';
-import { LOGIN_IMG_URL } from '../utils/Constants';
+import { checkValidData } from '../utils/validate';
+import { LOGIN_IMG_URL } from '../utils/constants';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { auth } from '../utils/Firebase';
+import { auth } from '../utils/firebase';
 import { useDispatch } from 'react-redux';
-import { updateUserDetails } from '../utils/UserSlice';
-import { USER_PROFILE_URL } from '../utils/Constants'
+import { updateUserDetails } from '../utils/userSlice';
+import { USER_PROFILE_URL } from '../utils/constants'
 
 
 const Login = () => {
@@ -19,7 +19,6 @@ const Login = () => {
 
   const onButtonClickHandler = () => {
     const message = checkValidData(email.current?.value, password?.current?.value)
-    console.log(message);
     setErrorMsg(message);
     if (message) return
     if (!isSignIn) {

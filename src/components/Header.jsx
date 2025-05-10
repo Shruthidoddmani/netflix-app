@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { NETFLIX_LOGO, USER_PROFILE_URL } from '../utils/Constants';
-import { auth } from '../utils/Firebase';
+import { NETFLIX_LOGO, USER_PROFILE_URL } from '../utils/constants';
+import { auth } from '../utils/firebase';
 import { signOut } from 'firebase/auth';
-import { updateUserDetails } from '../utils/UserSlice';
+import { updateUserDetails } from '../utils/userSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { onAuthStateChanged } from 'firebase/auth';
 
@@ -18,7 +18,6 @@ const Header = () => {
       if (user) {
         const { uid, email, displayName, photoURL } = user;
         dispatch(updateUserDetails({ uid, email, displayName, photoURL }));
-        // console.log(uid, email, displayName);
         navigate('/browse');
       } else {
         dispatch(updateUserDetails({}))
@@ -47,7 +46,7 @@ const Header = () => {
       />
       {Object.keys(user?.userData).length > 0 && <div className='flex '>
         <img
-          className="w-20 h-20 p-2"
+          className="w-12 h-12 p-2"
           src={USER_PROFILE_URL}
           alt='userIcon'
         />
