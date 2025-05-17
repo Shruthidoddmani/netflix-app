@@ -38,6 +38,13 @@ Currently, two official plugins are available:
 - update store with video data
 - embedded the youtube video and make it autoplay and mute 
 - added css to look video as background 
+- tailwind classes make maincontainer look awesome
+- build secondary component
+- build movie list
+- build movie card
+- TMDB image CDN URL
+- made the browse page look better with tailwind
+- created custom hooks for popular vedios and added popular movies
 
  # Features
  - Login & Signup
